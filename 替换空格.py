@@ -9,7 +9,6 @@ class Solution:
                 s += '  '  #新的长度
         new_length = len(s)
         s = list(s)
-        print(length,new_length)
         i, j = length-1, new_length-1
         while i != j:
             if s[i] == ' ':
