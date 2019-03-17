@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# 1. 堆排序方法
+# 1. 堆排序方法 O(nlogk)
 class Solution:
     def GetLeastNumbers_Solution(self, tinput, k):
         length = len(tinput)
