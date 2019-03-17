@@ -20,3 +20,11 @@ class Solution:
             j -= 1
             i -= 1
         return ''.join(s)
+'''
+class Solution:
+    # s 源字符串
+    def replaceSpace(self, s):
+        # write code here
+        s = s.split(' ')
+        return '%20'.join(s)
+'''
