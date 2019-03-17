@@ -9,7 +9,6 @@ class Solution:
         if k > length or k < 1 or length <= 0:
             return []
         for i in range(length):
-
             if i < k:
                 ls.append(tinput[i])
                 if i == k - 1:  # 此时正好k个元素，开始初始化最大堆
