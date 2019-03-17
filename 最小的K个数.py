@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
+# 1. 堆排序方法
 class Solution:
-    
     def GetLeastNumbers_Solution(self, tinput, k):
         length = len(tinput)
         ls = []
@@ -41,3 +41,37 @@ class Solution:
             else:
                 break
         # ls[i] = save
+        
+# 2. 类似快排的方法，时间复杂度O(n)
+class Solution:
+    def GetLeastNumbers_Solution(self, tinput, k):
+        # write code here
+        if k == len(tinput):
+            return sorted(tinput)
+        left = 0
+        right = len(tinput) - 1
+        while left <= right:
+            index = self.partition(tinput, left, right)
+            if index == k:
+                return sorted(tinput[:k])
+            elif index > k:
+                right = index-1
+            else:
+                left = index+1
+        return []
+        
+    def partition(self, nums, i, j):
+        base = nums[i]
+        while i < j:
+            while nums[j] >= base and i < j:
+                j -= 1
+            if i < j:
+                nums[i] = nums[j]
+                i += 1
+            while nums[i] <= base and i < j:
+                i += 1
+            if i < j:
+                nums[j] = nums[i]
+                j -= 1
+        nums[i] = base
+        return i
